@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Sports Stars - Department of Sports</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Player page specific styles */
+        .player-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .player-tab {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .player-tab.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .players-container {
+            display: none;
+        }
+        
+        .players-container.active {
+            display: block;
+        }
+        
+        .stat-comparison {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        
+        .stat-comparison i {
+            color: var(--secondary-color);
+        }
+        
+        .hero-small {
+            height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Sports Department Logo">
+                <h1>Department of Sports</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="news.html">News</a>
+                <a href="players.html" class="active">Sports Stars</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="login-btn" class="login-btn">Login</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="players-page">
+        <div class="hero-small">
+            <div class="hero-content">
+                <h1>Indian Sports Stars</h1>
+                <p>Celebrating excellence and extraordinary achievements in sports</p>
+            </div>
+        </div>
+
+        <div class="player-tabs">
+            <div class="player-tab active" data-tab="legends">Legendary Players</div>
+            <div class="player-tab" data-tab="current">Current Stars</div>
+        </div>
+
+        <!-- Legendary Players Section -->
+        <section class="players-section players-container active" id="legends-container">
+            <div class="search-filter">
+                <div class="search-bar">
+                    <input type="text" id="legends-search" placeholder="Search legendary players...">
+                    <button id="legends-search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-buttons" id="legends-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="cricket">Cricket</button>
+                    <button class="filter-btn" data-filter="hockey">Hockey</button>
+                    <button class="filter-btn" data-filter="badminton">Badminton</button>
+                    <button class="filter-btn" data-filter="athletics">Athletics</button>
+                    <button class="filter-btn" data-filter="chess">Chess</button>
+                    <button class="filter-btn" data-filter="boxing">Boxing</button>
+                </div>
+            </div>
+            
+            <div class="player-list" id="legends-grid">
+                <!-- Legendary players will be loaded dynamically from data/players.js -->
+            </div>
+        </section>
+
+        <!-- Current Stars Section -->
+        <section class="players-section players-container" id="current-container">
+            <div class="search-filter">
+                <div class="search-bar">
+                    <input type="text" id="current-search" placeholder="Search current players...">
+                    <button id="current-search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-buttons" id="current-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="cricket">Cricket</button>
+                    <button class="filter-btn" data-filter="football">Football</button>
+                    <button class="filter-btn" data-filter="badminton">Badminton</button>
+                    <button class="filter-btn" data-filter="javelin">Javelin</button>
+                    <button class="filter-btn" data-filter="400m">Athletics</button>
+                    <button class="filter-btn" data-filter="shooting">Shooting</button>
+                </div>
+            </div>
+            
+            <div class="player-list" id="current-grid">
+                <!-- Current players will be loaded dynamically from data/players.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@sports.gov.in</p>
+                <p>Phone: +91-XXX-XXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="news.html">News</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Department of Sports, Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Player Details -->
+    <div id="player-modal" class="modal">
+        <div class="modal-content player-modal-content">
+            <span class="close">&times;</span>
+            <div id="player-detail-content">
+                <!-- Player details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching
+            const playerTabs = document.querySelectorAll('.player-tab');
+            const playerContainers = document.querySelectorAll('.players-container');
+            
+            playerTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    playerTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding container
+                    const tabType = this.dataset.tab;
+                    playerContainers.forEach(container => {
+                        container.classList.remove('active');
+                        if (container.id === tabType + '-container') {
+                            container.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Fetch players data and render player cards
+            fetchPlayers().then(players => {
+                // Split players by category
+                const legendaryPlayers = players.filter(player => !player.category || player.category !== 'current');
+                const currentPlayers = players.filter(player => player.category === 'current');
+                
+                // Render both sections
+                renderPlayers(legendaryPlayers, 'legends-grid');
+                renderPlayers(currentPlayers, 'current-grid');
+                
+                // Setup filters and search for both sections
+                setupFilters(legendaryPlayers, 'legends-filters', 'legends-grid');
+                setupFilters(currentPlayers, 'current-filters', 'current-grid');
+                
+                setupSearch(legendaryPlayers, 'legends-search', 'legends-grid');
+                setupSearch(currentPlayers, 'current-search', 'current-grid');
+                
+                // Setup player modal for all players
+                setupPlayerModal(players);
+            });
+
+            function renderPlayers(players, containerId) {
+                const playerGrid = document.getElementById(containerId);
+                playerGrid.innerHTML = '';
+
+                players.forEach(player => {
+                    const playerCard = createPlayerCard(player);
+                    playerGrid.appendChild(playerCard);
+                });
+            }
+
+            function createPlayerCard(player) {
+                const playerCard = document.createElement('div');
+                playerCard.className = `player-card ${player.sport.toLowerCase()}`;
+                playerCard.dataset.id = player.id;
+                
+                // Create stats display based on player type
+                let statsHTML = '';
+                if (player.category === 'current') {
+                    // Convert player stats object to displayable format
+                    const statsArray = Object.entries(player.stats).map(([key, value]) => {
+                        const label = key.charAt(0).toUpperCase() + key.slice(1);
+                        return `<div class="stat">
+                            <span class="stat-value">${value}</span>
+                            <span class="stat-label">${formatStatLabel(label)}</span>
+                        </div>`;
+                    });
+                    
+                    statsHTML = `
+                        <div class="player-stats">
+                            ${statsArray.slice(0, 3).join('')}
+                        </div>
+                    `;
+                } else {
+                    // For legends, show achievements count
+                    statsHTML = `
+                        <div class="stat-comparison">
+                            <i class="fas fa-trophy"></i>
+                            <span>${player.achievements} Major Achievements</span>
+                        </div>
+                        <div class="stat-comparison">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>${player.yearsActive}</span>
+                        </div>
+                    `;
+                }
+                
+                playerCard.innerHTML = `
+                    <img src="${player.image}" alt="${player.name}" class="player-img" onerror="this.src='assets/images/svg/default.svg'">
+                    <div class="player-info">
+                        <h3>${player.name}</h3>
+                        <span class="player-sport">${player.sport}</span>
+                        <p class="player-description">${player.shortDescription}</p>
+                        ${statsHTML}
+                        <button class="view-player event-btn" data-id="${player.id}">View Profile</button>
+                    </div>
+                `;
+                
+                return playerCard;
+            }
+
+            function setupFilters(players, filtersId, gridId) {
+                const filterButtons = document.querySelectorAll(`#${filtersId} .filter-btn`);
+                
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const filter = this.dataset.filter;
+                        
+                        // Update active button
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Filter players in the current grid
+                        const playerCards = document.querySelectorAll(`#${gridId} .player-card`);
+                        
+                        playerCards.forEach(card => {
+                            if (filter === 'all') {
+                                card.style.display = 'block';
+                            } else {
+                                if (card.classList.contains(filter)) {
+                                    card.style.display = 'block';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            }
+                        });
+                    });
+                });
+            }
+
+            function setupSearch(players, searchId, containerId) {
+                const searchInput = document.getElementById(searchId);
+                const searchButton = document.getElementById(searchId + '-btn');
+                const playerGrid = document.getElementById(containerId);
+                
+                const performSearch = () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    if (searchTerm === '') {
+                        renderPlayers(players, containerId);
+                        return;
+                    }
+                    
+                    const filteredPlayers = players.filter(player => {
+                        return player.name.toLowerCase().includes(searchTerm) || 
+                               player.sport.toLowerCase().includes(searchTerm) ||
+                               (player.shortDescription && player.shortDescription.toLowerCase().includes(searchTerm));
+                    });
+                    
+                    if (filteredPlayers.length > 0) {
+                        playerGrid.innerHTML = '';
+                        filteredPlayers.forEach(player => {
+                            // Create player card as before
+                            // This section is simplified since we're just modifying the search functionality
+                            const playerCard = createPlayerCard(player);
+                            playerGrid.appendChild(playerCard);
+                        });
+                    } else {
+                        playerGrid.innerHTML = '<p class="no-events">No players found matching your search.</p>';
+                    }
+                };
+                
+                // Handle button click
+                if (searchButton) {
+                    searchButton.addEventListener('click', performSearch);
+                }
+                
+                // Handle Enter key press
+                if (searchInput) {
+                    searchInput.addEventListener('keyup', function(e) {
+                        if (e.key === 'Enter') {
+                            performSearch();
+                        }
+                    });
+                }
+            }
+
+            function setupPlayerModal(players) {
+                const modal = document.getElementById('player-modal');
+                const modalContent = document.getElementById('player-detail-content');
+                const closeBtn = modal.querySelector('.close');
+                
+                // Close modal when clicking X button
+                closeBtn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+                
+                // Open modal when clicking view profile button
+                document.addEventListener('click', function(event) {
+                    if (event.target.classList.contains('view-player')) {
+                        const playerId = parseInt(event.target.dataset.id);
+                        const player = players.find(p => p.id === playerId);
+                        
+                        if (player) {
+                            renderPlayerDetails(player, modalContent);
+                            modal.style.display = 'block';
+                        }
+                    }
+                });
+            }
+            
+            // Helper function to format stat labels
+            function formatStatLabel(label) {
+                // Convert camelCase to words
+                if (label.includes('Ranking')) return 'Ranking';
+                if (label === 'personalBest') return 'Best';
+                if (label === 'seasonBest') return 'Season Best';
+                if (label === 'caps') return 'Caps';
+                if (label === 'cleanSheets') return 'Clean Sheets';
+                if (label === 'strikeRate') return 'S/R';
+                if (label === 'worldRanking') return 'World Rank';
+                
+                return label;
+            }
+
+            function renderPlayerDetails(player, modalContent) {
+                if (player.category === 'current') {
+                    // Format for current players
+                    const statsHTML = Object.entries(player.stats).map(([key, value]) => {
+                        return `<li><strong>${formatStatLabel(key)}:</strong> ${value}</li>`;
+                    }).join('');
+                    
+                    modalContent.innerHTML = `
+                        <div class="player-detail-header">
+                            <img src="${player.image}" alt="${player.name}" class="player-detail-img" onerror="this.src='assets/images/svg/default.svg'">
+                            <div class="player-header-info">
+                                <h2>${player.name}</h2>
+                                <p class="player-sport">${player.sport}</p>
+                                <p>Active: ${player.yearsActive}</p>
+                                <div class="player-medals">
+                                    ${player.medals ? player.medals.map(medal => `<span class="medal ${medal.type}">${medal.name}</span>`).join('') : ''}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-detail-content">
+                            <h3>Biography</h3>
+                            <p>${player.biography}</p>
+                            
+                            <h3>Career Highlights</h3>
+                            <ul class="career-highlights">
+                                ${player.careerHighlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                            </ul>
+                            
+                            <h3>Statistics</h3>
+                            <ul class="player-stats-list">
+                                ${statsHTML}
+                            </ul>
+                            
+                            <h3>Awards & Recognitions</h3>
+                            <ul class="awards-list">
+                                ${player.awards.map(award => `<li>${award}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                } else {
+                    // Format for legendary players
+                    modalContent.innerHTML = `
+                        <div class="player-detail-header">
+                            <img src="${player.image}" alt="${player.name}" class="player-detail-img" onerror="this.src='assets/images/svg/default.svg'">
+                            <div class="player-header-info">
+                                <h2>${player.name}</h2>
+                                <p class="player-sport">${player.sport}</p>
+                                <div class="player-medals">
+                                    ${player.medals.map(medal => `<span class="medal ${medal.type}">${medal.name}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-detail-content">
+                            <h3>Biography</h3>
+                            <p>${player.biography}</p>
+                            
+                            <h3>Career Highlights</h3>
+                            <ul class="career-highlights">
+                                ${player.careerHighlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                            </ul>
+                            
+                            <h3>Awards & Recognitions</h3>
+                            <ul class="awards-list">
+                                ${player.awards.map(award => `<li>${award}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

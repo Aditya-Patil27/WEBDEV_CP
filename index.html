@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Sports - Government of India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Sports Department Logo">
+                <h1>Department of Sports</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="news.html">News</a>
+                <a href="players.html">Sports Stars</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="login-btn" class="login-btn">Login</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Excellence in Sports</h1>
+                <p>Developing champions and promoting sports culture across India</p>
+                <a href="events.html" class="cta-button">Upcoming Events</a>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title">About the Department</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>The Department of Sports functions under the Ministry of Youth Affairs and Sports, Government of India. Our mission is to develop and promote sports throughout the country, identify and nurture sporting talent, provide world-class facilities, and ensure India's success in international sports competitions.</p>
+                        <p>We work closely with national sports federations, state governments, and various stakeholders to create a robust sports ecosystem that enables athletes to excel on the global stage.</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">30+</span>
+                                <span class="stat-label">Sports Disciplines</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">100+</span>
+                                <span class="stat-label">Training Centers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5000+</span>
+                                <span class="stat-label">Athletes Supported</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/images/sports.png" alt="Sports Initiative">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="news-grid" id="news-container">
+                </div>
+                <div class="view-more-container">
+                    <a href="news.html" class="view-more-btn">View All News</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="initiatives-section">
+            <div class="container">
+                <h2 class="section-title">Our Initiatives</h2>
+                <div class="initiatives-grid">
+                    <div class="initiative-card">
+                        <div class="initiative-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Khelo India</h3>
+                        <p>A national program for the development of sports with a focus on grassroots talent identification and nurturing.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <div class="initiative-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Sports Scholarships</h3>
+                        <p>Financial support for promising athletes to pursue excellence in their chosen sports discipline.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <div class="initiative-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Sports Infrastructure</h3>
+                        <p>Development of state-of-the-art sports facilities and training centers across the country.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <div class="initiative-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Coach Development</h3>
+                        <p>Programs to train and certify sports coaches to international standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Join the Sports Movement</h2>
+                <p>Whether you're an athlete, coach, or sports enthusiast, be a part of India's sporting journey.</p>
+                <div class="cta-buttons">
+                    <a href="login.html" class="cta-button">Sign Up Now</a>
+                    <a href="contact.html" class="cta-button secondary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@sports.gov.in</p>
+                <p>Phone: +91-XXX-XXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="news.html">News</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Department of Sports, Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="modal-login-form">
+                <div class="form-group">
+                    <label for="modal-email">Email</label>
+                    <input type="email" id="modal-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="modal-password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modal-role">Role</label>
+                    <select id="modal-role" required>
+                        <option value="">Select role</option>
+                        <option value="player">Player</option>
+                        <option value="coach">Coach</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="login.html">Register here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

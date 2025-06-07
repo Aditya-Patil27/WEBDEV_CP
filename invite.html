@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Players - Department of Sports</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Sports Department Logo">
+                <h1>Department of Sports</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="news.html">News</a>
+                <a href="players.html">Goated Players</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="dashboard-btn" class="login-btn">Dashboard</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="dashboard-container">
+            <div class="welcome-message">
+                <h2>Invite Players</h2>
+                <p>Send invitation emails to new players to join your team</p>
+            </div>
+
+            <div class="invite-form-container">
+                <form id="invite-form" class="invite-form">
+                    <div class="form-group">
+                        <label for="to-email">Player's Email</label>
+                        <input type="email" id="to-email" name="to_email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="player-name">Player's Name</label>
+                        <input type="text" id="player-name" name="player_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" value="Invitation to Join Sports Department Team" required>
+                    </div>
+
+                    <div class="form-group message-area">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required>Dear {{player_name}},
+
+We would like to invite you to join our team at the Department of Sports. Your skills and dedication have impressed us, and we believe you would be a valuable addition to our team.
+
+Please click the link below to register:
+https://sports.gov.in/register
+
+Best regards,
+The Department of Sports
+Government of India</textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Invitation</button>
+                </form>
+
+                <div id="success-message" style="display: none;" class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Invitation sent successfully!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@sports.gov.in</p>
+                <p>Phone: +91-XXX-XXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="news.html">News</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Department of Sports, Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/invite.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in and is a coach
+            const userSession = sessionStorage.getItem('user');
+            if (!userSession) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const user = JSON.parse(userSession);
+            if (user.role !== 'coach') {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
+            // Dashboard button functionality
+            document.getElementById('dashboard-btn').addEventListener('click', function() {
+                window.location.href = 'dashboard.html';
+            });
+        });
+    </script>
+</body>
+</html> 

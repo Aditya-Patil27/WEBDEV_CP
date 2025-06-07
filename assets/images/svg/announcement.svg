@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300">
+    <rect width="500" height="300" fill="#1a73e8" />
+    <circle cx="250" cy="120" r="60" fill="#ffffff" fill-opacity="0.2" />
+    <path d="M290 120 Q250 70 210 120" stroke="#ffffff" stroke-width="5" fill="none" />
+    <path d="M290 120 Q250 170 210 120" stroke="#ffffff" stroke-width="5" fill="none" />
+    <rect x="245" y="120" width="10" height="80" fill="#ffffff" />
+    <text x="250" y="230" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#ffffff">Announcement</text>
+    <text x="250" y="260" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff">Department of Sports</text>
+</svg> 

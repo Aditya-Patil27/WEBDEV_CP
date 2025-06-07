@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Department of Sports</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Sports Department Logo">
+                <h1>Department of Sports</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="news.html">News</a>
+                <a href="players.html">Sports Stars</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="logout-btn" class="login-btn">Logout</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="dashboard-container">
+            <!-- User profile section -->
+            <div class="user-profile">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h2>Welcome, <span id="user-name">User</span></h2>
+                        <div class="user-details">
+                            <span><i class="fas fa-envelope"></i> <span id="user-email">user@example.com</span></span>
+                            <span><i class="fas fa-id-badge"></i> <span id="user-id">ID: XXXX-XXXX-XXXX</span></span>
+                            <span><i class="fas fa-user-tag"></i> <span id="user-role">Role: Player</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats section -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-calendar-alt icon"></i>
+                    <h3>Upcoming Events</h3>
+                    <div class="value" id="upcoming-events-count">5</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-trophy icon"></i>
+                    <h3>Achievements</h3>
+                    <div class="value" id="achievements-count">12</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users icon"></i>
+                    <h3>Team Members</h3>
+                    <div class="value" id="team-count">24</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line icon"></i>
+                    <h3>Performance</h3>
+                    <div class="value" id="performance">87%</div>
+                </div>
+            </div>
+
+            <!-- Coach specific section -->
+            <div id="coach-section" style="display: none;">
+                <div class="recent-container">
+                    <h3>Team Management</h3>
+                    <div class="action-buttons">
+                        <a href="invite.html" class="cta-button">Invite Players</a>
+                        <a href="schedule-training.html" class="cta-button">Schedule Training</a>
+                        <a href="#" class="cta-button">Performance Reports</a>
+                    </div>
+                </div>
+
+                <div class="recent-container">
+                    <h3>Recent Team Activity</h3>
+                    <ul class="recent-list">
+                        <li>
+                            <span><i class="fas fa-running"></i> Rajesh Kumar completed training session</span>
+                            <span>2 hours ago</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-user-edit"></i> Priya Singh updated her profile</span>
+                            <span>Yesterday</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-user-plus"></i> New player Vikram joined the team</span>
+                            <span>3 days ago</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Player specific section -->
+            <div id="player-section" style="display: none;">
+                <div class="recent-container">
+                    <h3>Your Training Schedule</h3>
+                    <ul class="recent-list">
+                        <li>
+                            <span><i class="fas fa-sun"></i> Morning Practice: 6:00 AM - 8:00 AM</span>
+                            <span>Daily</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-dumbbell"></i> Strength Training: 4:00 PM - 5:30 PM</span>
+                            <span>Mon, Wed, Fri</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-users"></i> Team Strategy Session: 6:00 PM - 7:00 PM</span>
+                            <span>Thursday</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="recent-container">
+                    <h3>Your Performance Metrics</h3>
+                    <div class="performance-metrics">
+                        <div class="metric">
+                            <h4>Fitness Level</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <h4>Skill Development</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 78%;">78%</div>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <h4>Attendance</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 92%;">92%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent news section (common for both) -->
+            <div class="recent-container">
+                <h3>Latest Announcements</h3>
+                <ul class="recent-list" id="announcements-list">
+                    <li>
+                        <span><i class="fas fa-bullhorn"></i> National championships scheduled for next month</span>
+                        <span>July 25, 2024</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-heartbeat"></i> New fitness program launching next week</span>
+                        <span>July 20, 2024</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-users"></i> Team selection for international tournament</span>
+                        <span>July 15, 2024</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@sports.gov.in</p>
+                <p>Phone: +91-XXX-XXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="news.html">News</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Department of Sports, Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            const userSession = sessionStorage.getItem('user');
+            if (!userSession) {
+                window.location.href = 'login.html'; // Redirect to login if not logged in
+                return;
+            }
+
+            const user = JSON.parse(userSession);
+            
+            // Update profile information
+            document.getElementById('user-name').textContent = user.email.split('@')[0];
+            document.getElementById('user-email').textContent = user.email;
+            document.getElementById('user-id').textContent = `ID: ${user.uniqueId || 'Not Available'}`;
+            document.getElementById('user-role').textContent = `Role: ${user.role.charAt(0).toUpperCase() + user.role.slice(1)}`;
+            
+            // Show role-specific content
+            if (user.role === 'coach') {
+                document.getElementById('coach-section').style.display = 'block';
+                document.getElementById('player-section').style.display = 'none';
+            } else {
+                document.getElementById('player-section').style.display = 'block';
+                document.getElementById('coach-section').style.display = 'none';
+            }
+            
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', function() {
+                sessionStorage.removeItem('user');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html> 

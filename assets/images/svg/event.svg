@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300">
+    <rect width="500" height="300" fill="#fbbc04" />
+    <rect x="200" y="80" width="100" height="90" fill="#ffffff" fill-opacity="0.8" rx="5" ry="5" />
+    <rect x="215" y="70" width="15" height="20" fill="#ffffff" fill-opacity="0.8" />
+    <rect x="270" y="70" width="15" height="20" fill="#ffffff" fill-opacity="0.8" />
+    <line x1="200" y1="110" x2="300" y2="110" stroke="#fbbc04" stroke-width="2" />
+    <text x="250" y="150" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#333333">28</text>
+    <text x="250" y="230" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#ffffff">Event</text>
+    <text x="250" y="260" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff">Department of Sports</text>
+</svg> 

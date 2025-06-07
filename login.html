@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Department of Sports</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Sports Department Logo">
+                <h1>Department of Sports</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="news.html">News</a>
+                <a href="players.html">Sports Stars</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="login-page">
+        <div class="form-container">
+            <div class="form-tabs">
+                <div class="tab active" data-tab="login">Login</div>
+                <div class="tab" data-tab="register">Register</div>
+            </div>
+            
+            <div class="form-content">
+                <!-- Login Form -->
+                <form id="login-form" class="active-form">
+                    <h2>Login to Your Account</h2>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="password" name="password" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                        <span class="error-message" id="password-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="player">Player</option>
+                            <option value="coach">Coach</option>
+                        </select>
+                        <span class="error-message" id="role-error"></span>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Login</button>
+                    
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="#" class="switch-form" data-form="register">Register here</a></p>
+                    </div>
+                </form>
+                
+                <!-- Register Form -->
+                <form id="register-form" style="display: none;">
+                    <h2>Create an Account</h2>
+                    
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" name="name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" name="email" required>
+                        <span class="error-message" id="reg-email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="reg-password" name="password" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                        <span class="error-message" id="reg-password-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <div class="password-input">
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                        <span class="error-message" id="confirm-password-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-role">Role</label>
+                        <select id="reg-role" name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="player">Player</option>
+                            <option value="coach">Coach</option>
+                        </select>
+                        <span class="error-message" id="reg-role-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sport">Sport</label>
+                        <select id="sport" name="sport" required>
+                            <option value="">Select your sport</option>
+                            <option value="cricket">Cricket</option>
+                            <option value="football">Football</option>
+                            <option value="hockey">Hockey</option>
+                            <option value="badminton">Badminton</option>
+                            <option value="athletics">Athletics</option>
+                            <option value="boxing">Boxing</option>
+                            <option value="wrestling">Wrestling</option>
+                            <option value="shooting">Shooting</option>
+                        </select>
+                        <span class="error-message" id="sport-error"></span>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#" class="terms-link">Terms and Conditions</a></label>
+                        <span class="error-message" id="terms-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Register</button>
+                    
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="#" class="switch-form" data-form="login">Login here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@sports.gov.in</p>
+                <p>Phone: +91-XXX-XXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="news.html">News</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Department of Sports, Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching
+            const tabs = document.querySelectorAll('.tab');
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const switchFormLinks = document.querySelectorAll('.switch-form');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding form
+                    const formToShow = this.dataset.tab;
+                    
+                    if (formToShow === 'login') {
+                        loginForm.style.display = 'block';
+                        registerForm.style.display = 'none';
+                    } else {
+                        loginForm.style.display = 'none';
+                        registerForm.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Switch form links
+            switchFormLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const formToShow = this.dataset.form;
+                    
+                    // Update active tab
+                    tabs.forEach(tab => {
+                        if (tab.dataset.tab === formToShow) {
+                            tab.click();
+                        }
+                    });
+                });
+            });
+            
+            // Register form validation and submission
+            const registerFormEl = document.getElementById('register-form');
+            
+            if (registerFormEl) {
+                registerFormEl.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Basic validation
+                    let isValid = true;
+                    
+                    // Password match validation
+                    const password = document.getElementById('reg-password').value;
+                    const confirmPassword = document.getElementById('confirm-password').value;
+                    const confirmError = document.getElementById('confirm-password-error');
+                    
+                    if (password !== confirmPassword) {
+                        confirmError.textContent = 'Passwords do not match';
+                        isValid = false;
+                    } else {
+                        confirmError.textContent = '';
+                    }
+                    
+                    // Terms agreement validation
+                    const terms = document.getElementById('terms');
+                    const termsError = document.getElementById('terms-error');
+                    
+                    if (!terms.checked) {
+                        termsError.textContent = 'You must agree to the terms';
+                        isValid = false;
+                    } else {
+                        termsError.textContent = '';
+                    }
+                    
+                    if (isValid) {
+                        // Simulate successful registration
+                        alert('Registration successful! You can now log in.');
+                        
+                        // Switch to login form
+                        document.querySelector('.tab[data-tab="login"]').click();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
